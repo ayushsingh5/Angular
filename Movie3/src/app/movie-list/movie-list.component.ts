@@ -22,7 +22,7 @@ export class MovieListComponent {
     this.getMovies();
   }
 
-  addShipment(movie : Movie){
+  addMovie(movie : Movie){
     this.ms.addMovie(movie).subscribe((res)=> {this.getMovies()});
   }
 
