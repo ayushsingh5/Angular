@@ -8,11 +8,11 @@ const routes: Routes = [
   { path: '', redirectTo: '/movies', pathMatch: 'full' }, // Default route
   { path: 'movies', component: MovieListComponent }, // List of shipments
    { path: 'movies/new', component: MovieFormComponent }, // Form to add a new shipment
-   { path: 'movies/:id', component: MovieDetailComponent },
+   //{ path: 'movies/:id', component: MovieDetailComponent },
   {path:'movie-list',component:MovieListComponent},
    {path:'movie-form',component:MovieFormComponent}, 
-   {path:'movie-details/:id',component:MovieDetailComponent}, 
-   {path:'movie-details',component:MovieDetailComponent},
+   {path:'movie-detail/:id',component:MovieDetailComponent}, 
+   {path:'movie-detail',component:MovieDetailComponent},
    {path:'',redirectTo:'/movie-list',pathMatch:'full'}
 ];
 

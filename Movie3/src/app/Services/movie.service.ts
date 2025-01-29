@@ -19,20 +19,34 @@ export class MovieService {
     return this.http.get(this.apiUrl);
   }
 
-  getMovie(id:string): Observable<any> {
-    return this.http.get(this.apiUrl+"/"+id).pipe(
-      map((data) => {
-        if(Array.isArray(data)){
-          return data;
-        }
-        else {
-          return [data];
-        }
-      })
-     );
-  }
-
   deleteMovie(id:string) : Observable<any> {
     return this.http.delete(this.apiUrl+"/"+id);
   }
+
+  // Use this method in service if in problem statement 
+  // it is not given that the output of the getById method should be in array
+  //also according to this their will be some peronalised changes in movie-detail CHECK
+  getMovie(id:string): Observable<any> {
+    return this.http.get(this.apiUrl+"/"+id);  // return this.http.get(this.apiUrl+"/movies/"+id); in case of environment in case of urlEndpoint.
+  }
+
+
+  // Use this method in service if in problem statement 
+  // it is given that the output of the getById method should be in array
+  //also according to this their will be some peronalised changes in movie-detail CHECK
+
+  // getMovie(id:string): Observable<any> {
+  //   return this.http.get(this.apiUrl+"/"+id)
+  //    .pipe(
+  //      map((data) => {
+  //        if(Array.isArray(data)){
+  //          return data;
+  //        }
+  //        else {
+  //          return [data];
+  //        }
+  //      })
+  //     );
+  // }
+
 }

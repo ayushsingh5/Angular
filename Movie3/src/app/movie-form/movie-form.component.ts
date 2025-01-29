@@ -35,7 +35,7 @@ export class MovieFormComponent implements OnInit{
 
   insertData(){
     if(this.fg.valid){
-      this.ms.addMovie(this.fg.value).subscribe(() => {this.router.navigate(['/viewMovie'])
+      this.ms.addMovie(this.fg.value).subscribe(() => {this.router.navigate(['/movies'])
       });
       this.fg.markAllAsTouched();
       this.successMsg = true;
@@ -45,6 +45,6 @@ export class MovieFormComponent implements OnInit{
   reset()
   {
     this.text ="";
-    this.ms.getAllMovies();
+    //this.ms.getAllMovies();
   }
 }

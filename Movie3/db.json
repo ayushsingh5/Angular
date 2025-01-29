@@ -1,24 +1,24 @@
 {
-    "movies": [
-      {
-        "id": "1",
-        "movieName": "Inception",
-        "dateOfRelease": "2024-12-06"
-      },
-      {
-        "id": "2",
-        "movieName": "Rowdy",
-        "dateOfRelease": "2024-12-08"
-      },
-      {
-        "id": "524c",
-        "movieName": "3 Idiots",
-        "dateOfRelease": "2012-12-12"
-      },
-      {
-        "id": "8b3b",
-        "movieName": "Maut ka Khel",
-        "dateOfRelease": "2020-22-12"
-      }
-    ]
-  }
+  "movies": [
+    {
+      "id": "8b3b",
+      "movieName": "Maut ka Khel",
+      "dateOfRelease": "2020-22-12"
+    },
+    {
+      "id": "078d",
+      "movieName": "3 Idiots",
+      "dateOfRelease": "2012-12-12"
+    },
+    {
+      "id": "98b6",
+      "movieName": "Dhamal",
+      "dateOfRelease": "2005-12-12"
+    },
+    {
+      "id": "3c63",
+      "movieName": "hjg",
+      "dateOfRelease": "2820-00-00"
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from '../Services/movie.service';
 import { Movie } from '../Model/movie';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-movie-detail',
@@ -10,14 +11,35 @@ import { Movie } from '../Model/movie';
 })
 export class MovieDetailComponent {
 
-  movie: Movie | undefined;
+  movies !: Movie; // Use this variable for storing output of getMovieById without arrays.
+
+  //movieArray$ : Observable<Movie[]> = of([]); //Use this variable for storing output of getMovieById with arrays.
+  
 
   constructor(private route: ActivatedRoute, private ms: MovieService) {}
 
   ngOnInit(): void {
-    const id = +this.route.snapshot.paramMap.get('id')!;
-    this.ms.getMovie('id').subscribe((movie) => {
-      this.movie = movie;
-    });
+    this.route.params.subscribe((data)=>
+    {
+      const a = data['id'];
+      this.getData(a);
+    })
+    
   }
+
+//Use below method if using service getMovieById without array output
+  getData(id:any)
+  {
+    this.ms.getMovie(id).subscribe((data)=>
+    {
+      this.movies = data;
+    })
+  }
+
+//Use below method if using service getMovieById with array output
+  // getData(id:any)
+  // {
+  //   this.movieArray$= this.ms.getMovie(id);
+  // }
+  
 }

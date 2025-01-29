@@ -13,8 +13,8 @@ export class MovieListComponent {
   filteredMovies$: Observable<Movie[]> = of([]);
   movies$ : Observable<Movie[]> = of([]);
 
-  addNewMovie: boolean = false;
-  text: any;
+  //addNewMovie: boolean = false;
+  //text: any;
 
   constructor(private ms: MovieService, private router:ActivatedRoute) {}
 
@@ -27,7 +27,7 @@ export class MovieListComponent {
   }
 
   searchMovies(event:any){
-    const searchTerm = event.target.value.trim();
+    const searchTerm = event.target.value.trim().toLowerCase();
     if(!searchTerm)
       {
       this.filteredMovies$ = this.movies$;
@@ -66,5 +66,7 @@ export class MovieListComponent {
         b.movieName.toLowerCase().localeCompare(a.movieName.toLowerCase()))))
     //this.movies$ = this.filteredMovies$;
   }
+
+
 }
 

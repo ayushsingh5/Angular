@@ -23,9 +23,9 @@
           <td>{{m.movieName}}</td>
           <td>{{m.dateOfRelease}}</td>
 
-          <td><button [routerLink]="['/movie-detail',m.id]">View</button></td>
+          <td><button [routerLink]="['/movie-detail/',m.id]">View</button></td>
           <!-- <td><button [routerLink]="['/movie-update/',movie.id]">Edit</button></td> -->
-          <!-- <td><button (click)="viewData(movie.id)">View</button></td> -->
+          <!--<td><button (click)="viewData(m.id)">View</button></td>-->
           <td><button (click)="deleteMovie(m.id)">Delete</button></td>
         </tr>
       </tbody>

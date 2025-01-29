@@ -1,6 +1,18 @@
-<div *ngIf="movie">
+
+
+<!-- Use this HTML method if output of GetMovieById in arrays -->
+<!--
+<div *ngFor="let a of movieArray$|async">
     <h2>Movie Details</h2>
-    <p><strong>Movie Id:</strong> {{ movie.id }}</p>
-    <p><strong>Movie Name:</strong> {{ movie.movieName }}</p>
-    <p><strong>Date of Release:</strong> {{ movie.dateOfRelease }}</p>
-</div>
+    <p><strong>Movie Id:</strong> {{ a.id }}</p>
+    <p><strong>Movie Name:</strong> {{ a.movieName }}</p>
+    <p><strong>Date of Release:</strong> {{ a.dateOfRelease }}</p>
+</div> 
+-->
+
+<!--Use this HTML method if output of GetMovieById is not in arrays -->
+<p><strong>Movie Id:</strong> {{ movies.id }}</p>
+<p><strong>Movie Name:</strong> {{ movies.movieName }}</p>
+<p><strong>Date of Release:</strong> {{ movies.dateOfRelease }}</p>
+
+
