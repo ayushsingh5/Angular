@@ -1,0 +1,34 @@
+
+
+<div class="movie-list-container">
+    <h1><strong>Movies</strong></h1>
+    <button (click)="ascending()">Sort by Asc</button>
+    <button (click)="descending()">Sort by Desc</button>
+    <input type="text" placeholder="Search" (input)="searchMovies($event)">
+    <button [routerLink]="['/movie-form']">Add New Shipment</button>
+  <!-- <button [routerLink]="['/shipment-details']">Show Details</button> -->
+
+    <table>
+      <thead>
+        <tr>
+          <th>Movie Id</th>
+          <th>Movie Name</th>
+          <th>Date of Release</th>
+          <th colspan="3">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let m of filteredMovies$ | async">
+          <td>{{m.id}}</td>
+          <td>{{m.movieName}}</td>
+          <td>{{m.dateOfRelease}}</td>
+
+          <td><button [routerLink]="['/movie-detail',m.id]">View</button></td>
+          <!-- <td><button [routerLink]="['/movie-update/',movie.id]">Edit</button></td> -->
+          <!-- <td><button (click)="viewData(movie.id)">View</button></td> -->
+          <td><button (click)="deleteMovie(m.id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>

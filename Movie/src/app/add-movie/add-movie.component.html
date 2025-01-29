@@ -1,0 +1,23 @@
+<div>
+<form [formGroup]="fg" (ngSubmit)="insertData()">
+    <div class = "form-group">
+        <label for="movieName">Movie Name</label>
+        <input type="text" placeholder="Movie Name" id="movieName" formControlName="movieName">
+        <div *ngIf="fg.get('movieName')?.invalid && (fg.get('movieName')?.touched || fg.get('movieName')?.dirty)">
+            <small *ngIf="fg.get('movieName')?.hasError('required')">Movie name is required.</small>
+        </div>
+    </div>
+
+    <div>
+        <label for="dateOfRelease">Date of Release</label>
+        <input type="text" placeholder="Date of Release" formControlName="dateOfRelease">
+        <div *ngIf="fg.get('dateOfRelease')?.invalid && (fg.get('dateOfRelease')?.dirty || fg.get('dateOfRelease')?.touched)">
+            <small *ngIf="fg.get('dateOfRelease')?.hasError('required')"> Date of Release is required.</small>
+            <small *ngIf="fg.get('dateOfRelease')?.hasError('inval')"> Enter the date in valid format YYYY-MM-DD. </small>
+        </div>
+    </div>
+    <button type="submit" [disabled]="fg.invalid">Submit</button>
+    <p *ngIf="successMsg">Data Inserted Successfully</p>
+    <button type="reset" class="reset">Reset</button>
+</form>
+</div>

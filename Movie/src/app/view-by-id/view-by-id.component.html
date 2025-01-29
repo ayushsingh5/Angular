@@ -1,0 +1,24 @@
+<div>
+    <label for="movieId">Enter Movie ID:</label>
+    <input type="number" id="movieId" [(ngModel)]="movieId" placeholder="Movie ID">
+    <button (click)="viewMovie()">View</button>
+  </div>
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Movie Id</th>
+        <th>Movie Name</th>
+        <th>Release Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let a of data$ |async">
+        <td>{{ a.id }}</td>
+        <td>{{ a.movieName }}</td>
+        <td>{{ a.dateOfRelease }}</td>
+        <td><button style="background-color: red;" (click)="deleteData(a.id)" >Delete</button></td>
+        
+      </tr>
+    </tbody>
+  </table>

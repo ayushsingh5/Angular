@@ -1,0 +1,20 @@
+<table>
+    <thead>
+      <tr>
+        <th>Movie Id</th>
+        <th>Movie Name</th>
+        <th>Release Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let m of data$ | async">
+        <td>{{ m.id }}</td>
+        <td>{{ m.movieName }}</td>
+        <td>{{ m.dateOfRelease }}</td>
+        <td><button [routerLink]="['/viewMovieById',m.id]">view</button></td>
+        <td><button style="background-color: red;" (click)="deleteData(m.id)" >Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+  
