@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Movie } from '../Model/movie';
 import { map, Observable, of } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
@@ -9,7 +9,7 @@ import { MovieService } from '../Services/movie.service';
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.css']
 })
-export class MovieListComponent {
+export class MovieListComponent implements OnInit {
   filteredMovies$: Observable<Movie[]> = of([]);
   movies$ : Observable<Movie[]> = of([]);
 
@@ -66,6 +66,7 @@ export class MovieListComponent {
         b.movieName.toLowerCase().localeCompare(a.movieName.toLowerCase()))))
     //this.movies$ = this.filteredMovies$;
   }
+  
 
 
 }

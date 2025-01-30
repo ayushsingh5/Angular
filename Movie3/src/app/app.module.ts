@@ -8,13 +8,15 @@ import { MovieFormComponent } from './movie-form/movie-form.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MovieUpdateComponent } from './movie-update/movie-update.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieDetailComponent,
     MovieFormComponent,
-    MovieListComponent
+    MovieListComponent,
+    MovieUpdateComponent
   ],
   imports: [
     BrowserModule,

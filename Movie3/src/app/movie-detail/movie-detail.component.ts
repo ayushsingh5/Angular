@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from '../Services/movie.service';
 import { Movie } from '../Model/movie';
@@ -9,7 +9,7 @@ import { Observable, of } from 'rxjs';
   templateUrl: './movie-detail.component.html',
   styleUrls: ['./movie-detail.component.css']
 })
-export class MovieDetailComponent {
+export class MovieDetailComponent implements OnInit {
 
   movies !: Movie; // Use this variable for storing output of getMovieById without arrays.
 

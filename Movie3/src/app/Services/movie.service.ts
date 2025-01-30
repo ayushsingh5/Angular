@@ -23,6 +23,10 @@ export class MovieService {
     return this.http.delete(this.apiUrl+"/"+id);
   }
 
+  updateEvent(id: any, movie: Movie): Observable<any> {
+    return this.http.put(this.apiUrl+"/"+id, movie);     
+  }
+
   // Use this method in service if in problem statement 
   // it is not given that the output of the getById method should be in array
   //also according to this their will be some peronalised changes in movie-detail CHECK
