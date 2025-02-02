@@ -1,0 +1,43 @@
+<div>
+    <form [formGroup]="fg" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="movieName">Movie Name</label>
+            <input type="text" placeholder="Movie Name" formControlName="movieName">
+            <div *ngIf="fg.get('movieName')?.invalid && (fg.get('movieName')?.dirty || fg.get('movieName')?.touched)">
+                <small *ngIf="fg.get('movieName')?.hasError('required')">Mandatory Field</small>
+                <small *ngIf="fg.get('movieName')?.hasError('min')">Min 1 Input Required</small>
+            </div>
+
+        </div>
+
+        <div>
+            <label for="dateOfRelease">Date Of Release</label>
+            <input type="text" placeholder="Date Of Release" formControlName="dateOfRelease">
+            <div *ngIf="fg.get('dateOfRelease')?.invalid && (fg.get('dateOfRelease')?.dirty || fg.get('dateOfRelease')?.touched)">
+                <small *ngIf="fg.get('dateOfRelease')?.hasError('required')">Mandatory Field</small>
+                <small *ngIf="fg.get('dateOfRelease')?.hasError('max')">Max 1 Input Required</small>
+                <small *ngIf="fg.get('dateOfRelease')?.hasError('inval')">Date Format should be YYYY-MM-DD</small>
+            </div>
+        </div>
+
+        <div>
+            <label for="mobNo">Mobile No</label>
+            <input type="text" placeholder="MobileNo" formControlName="mobNo">
+            <div *ngIf="fg.get('mobNo')?.invalid && (fg.get('mobNo')?.dirty || fg.get('mobNo')?.touched)">
+                <small *ngIf="fg.get('mobNo')?.hasError('required')">Mandatory Field</small>
+                <small *ngIf="fg.get('mobNo')?.hasError('pattern')">Invalid Pattern</small>
+            </div>
+        </div>
+
+        <div>
+            <label for="email">Email</label>
+            <input type="text" placeholder="EmailId" formControlName="email">
+            <div *ngIf="fg.get('email')?.invalid && (fg.get('mobNo')?.dirty || fg.get('email')?.touched)">
+                <small *ngIf="fg.get('email')?.hasError('required')">Mandatory Field</small>
+                <small *ngIf="fg.get('email')?.hasError('pattern')">Invalid Pattern</small>
+            </div>
+        </div>
+
+    <button type="submit" [disabled]="fg.invalid">Add Movie</button>
+    </form>
+</div>

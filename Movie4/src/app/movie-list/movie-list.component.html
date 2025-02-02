@@ -1,0 +1,29 @@
+<div>
+    <button (click)="ascending()">ASC Movies</button>
+    <button (click)="descending()">DESC Movies</button>
+
+    <input type="text" [(ngModel)]="filtertext">
+
+    <table>
+        <thead>
+            <th>MovieID</th>
+            <th>MovieName</th>
+            <th>dateOfRelease</th>
+            <th>MobileNo</th>
+            <th>Email</th>
+            <th colspan="3">Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let m of ((filteredMovies$ | async) | search : filtertext)">
+                <td>{{m.id}}</td>
+                <td>{{m.movieName}}</td>
+                <td>{{m.dateOfRelease}}</td>
+                <td>{{m.mobNo}}</td>
+                <td>{{m.email}}</td>
+                <td><button [routerLink]="['/moviedetails/', m.id]">View</button></td>
+                <td><button [routerLink]="['/movieupdate/', m.id]">Edit</button></td>
+                <td><button (click)="deleteMovie(m.id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

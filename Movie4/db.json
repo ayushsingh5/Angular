@@ -1,0 +1,18 @@
+{
+    "movies": [
+      {
+        "id": "3c63",
+        "movieName": "yjhd",
+        "dateOfRelease": "2820-00-22",
+        "mobNo":"1234567890",
+        "email":"yjhd@gmail.com"
+      },
+      {
+        "id": "1bf6",
+        "movieName": "Ghajini",
+        "dateOfRelease": "2008-12-30",
+        "mobNo":"9876543210",
+        "email":"ghajini@gmail.com"
+      }
+    ]
+  }

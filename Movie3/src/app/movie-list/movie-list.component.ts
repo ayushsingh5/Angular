@@ -9,6 +9,7 @@ import { MovieService } from '../Services/movie.service';
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.css']
 })
+
 export class MovieListComponent implements OnInit {
   filteredMovies$: Observable<Movie[]> = of([]);
   movies$ : Observable<Movie[]> = of([]);
@@ -67,7 +68,5 @@ export class MovieListComponent implements OnInit {
     //this.movies$ = this.filteredMovies$;
   }
   
-
-
 }
 
