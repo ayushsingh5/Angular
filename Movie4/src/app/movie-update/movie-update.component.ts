@@ -24,7 +24,7 @@ export class MovieUpdateComponent implements OnInit{
 
       this.fgu = this.fb.group({
         movieName:["",[Validators.required, Validators.min(1)]],
-        dateOfRelease:["",[Validators.required, Validators.max(1), this.dateValidator]],
+        dateOfRelease:["",[Validators.required, this.dateValidator]],
         mobNo:["",[Validators.required, Validators.pattern(/^\d{9}$/)]],
         email:["",[Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)]]
       })
@@ -50,7 +50,10 @@ export class MovieUpdateComponent implements OnInit{
 
     onSubmit(){
       if(this.fgu.valid){
-        this.ms.updateMovie(this.movieId, this.fgu.value).subscribe(() => this.router.navigate(['/movielist']))
+        this.ms.updateMovie(this.movieId, this.fgu.value).subscribe((data) => {
+          alert("Update done successfully");
+          this.router.navigate(['/movielist'])
+        })
         this.successMsg = true;
       }
     }

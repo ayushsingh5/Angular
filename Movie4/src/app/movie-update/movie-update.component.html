@@ -15,7 +15,6 @@
             <input type="text" placeholder="Date Of Release" formControlName="dateOfRelease">
             <div *ngIf="fgu.get('dateOfRelease')?.invalid && (fgu.get('dateOfRelease')?.dirty || fgu.get('dateOfRelease')?.touched)">
                 <small *ngIf="fgu.get('dateOfRelease')?.hasError('required')">Mandatory Field</small>
-                <small *ngIf="fgu.get('dateOfRelease')?.hasError('max')">Max 1 Input Required</small>
                 <small *ngIf="fgu.get('dateOfRelease')?.hasError('inval')">Date Format should be YYYY-MM-DD</small>
             </div>
         </div>

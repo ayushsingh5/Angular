@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../Service/movie.service';
 import { map, Observable, of } from 'rxjs';
 import { Movie } from '../Model/movie';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-list',
@@ -15,7 +16,7 @@ export class MovieListComponent implements OnInit{
 
   filtertext!:'';
 
-  constructor(private ms:MovieService){}
+  constructor(private ms:MovieService, private routeer:Router){}
 
   ngOnInit(): void {
     this.getData();
@@ -26,8 +27,18 @@ export class MovieListComponent implements OnInit{
     this.filteredMovies$ = this.movies$;
   }
 
+  // Default Sorting
+  // getData(){
+  //   this.movies$ = this.ms.getMovies();
+  //   this.filteredMovies$ = this.movies$.pipe(map((d) => {
+  //     d.sort((a:Movie, b:Movie) => a.movieName.localeCompare(b.movieName))
+  //   }))
+  // }
+
   deleteMovie(id:any){
-    this.ms.deleteMovie(id).subscribe(() => { this.getData(); })
+    this.ms.deleteMovie(id).subscribe(() => { 
+      alert("Deletion Successfull");
+      this.routeer.navigateByUrl('movielist'); })
   }
 
   searchMovie(filterText:any){

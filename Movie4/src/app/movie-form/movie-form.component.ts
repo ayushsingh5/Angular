@@ -19,7 +19,7 @@ export class MovieFormComponent implements OnInit{
   ngOnInit(): void {
     this.fg = this.fb.group({
       movieName:["",[Validators.required, Validators.min(1)]],
-      dateOfRelease:["",[Validators.required, Validators.max(1), this.dateValidator]],
+      dateOfRelease:["",[Validators.required, this.dateValidator]],
       mobNo:["",[Validators.required, Validators.pattern(/^\d{9}$/)]],
       email:["",[Validators.required, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)]]
     })
@@ -35,7 +35,7 @@ export class MovieFormComponent implements OnInit{
 
   onSubmit(){
     if(this.fg.valid){
-      this.ms.addMovie(this.fg.value).subscribe(() => this.router.navigate(['/movielist']))
+      this.ms.addMovie(this.fg.value).subscribe(() => this.router.navigateByUrl('movielist'))
       this.successMsg = true;
     }
   }
