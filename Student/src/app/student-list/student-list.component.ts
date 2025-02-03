@@ -26,7 +26,7 @@ export class StudentListComponent implements OnInit{
     this.students$ = this.ss.getStudents();
      this.filteredStudents$ = this.students$.pipe(map((data)=>
     data.sort((a:Student, b:Student) => a.name.localeCompare(b.name))))
-     this.students$=this.filteredStudents$;
+     //this.students$=this.filteredStudents$;
   }
 
   // searchStudent(event:any){
