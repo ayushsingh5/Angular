@@ -1,0 +1,44 @@
+<div>
+    <form [formGroup]="fgu" (ngSubmit)="onSubmit()">
+
+        <div>
+            <label for="name">Name</label>
+            <input type="text" placeholder="Name" formControlName="name">
+            <div *ngIf="fgu.get('name')?.invalid && (fgu.get('name')?.touched || fgu.get('name')?.touched)">
+                <small *ngIf="fgu.get('name')?.hasError('required')">Mandatory Field</small>
+                <small *ngIf="fgu.get('name')?.hasError('minLength')">Min Length should be 8</small>
+                <small *ngIf="fgu.get('name')?.hasError('maxLength')">Max Length should be 20</small>
+            </div>
+        </div>
+
+        <div>
+            <label for="dateOfBirth">Date of Birth</label>
+            <input type="text" placeholder="Date of Birth" formControlName="dateOfBirth">
+            <div *ngIf="fgu.get('dateOfBirth')?.invalid && (fgu.get('dateOfBirth')?.touched || fgu.get('dateOfBirth')?.touched)">
+                <small *ngIf="fgu.get('dateOfBirth')?.hasError('required')">Mandatory Field</small>
+                <small *ngIf="fgu.get('dateOfBirth')?.hasError('inval')">YYYY-MM-DD</small>
+            </div>
+        </div>
+
+        <div>
+            <label for="percentage">Percentage</label>
+            <input type="text" placeholder="Percentage" formControlName="percentage">
+            <div *ngIf="fgu.get('percentage')?.invalid && (fgu.get('percentage')?.touched || fgu.get('percentage')?.touched)">
+                <small *ngIf="fgu.get('percentage')?.hasError('required')">Mandatory Field</small>
+                <small *ngIf="fgu.get('percentage')?.hasError('pattern')">only two decimal place is allowed</small>
+            </div>
+        </div>
+
+        <div>
+            <label for="weight">Weight</label>
+            <input type="text" placeholder="Weight" formControlName="weight">
+            <div *ngIf="fgu.get('weight')?.invalid && (fgu.get('weight')?.touched || fgu.get('weight')?.touched)">
+                <small *ngIf="fgu.get('weight')?.hasError('required')">Mandatory Field</small>
+            </div>
+        </div>
+
+        <button [disabled]="fgu.invalid">Add Student</button>
+        <p *ngIf="successMsg"> Updated Successfully</p>
+
+    </form>
+</div>
