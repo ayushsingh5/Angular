@@ -37,6 +37,7 @@ export class MovieFormComponent implements OnInit{
     if(this.fg.valid){
       this.ms.addMovie(this.fg.value).subscribe(() => this.router.navigateByUrl('movielist'))
       this.successMsg = true;
+      this.fg.reset;
     }
   }
 }

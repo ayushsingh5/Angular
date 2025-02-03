@@ -27,23 +27,10 @@ export class MovieListComponent implements OnInit{
     this.filteredMovies$ = this.movies$;
   }
 
-  // Default Sorting
-  // getData(){
-  //   this.movies$ = this.ms.getMovies();
-  //   this.filteredMovies$ = this.movies$.pipe(map((d) => {
-  //     d.sort((a:Movie, b:Movie) => a.movieName.localeCompare(b.movieName))
-  //   }))
-  // }
-
   deleteMovie(id:any){
     this.ms.deleteMovie(id).subscribe(() => { 
       alert("Deletion Successfull");
       this.routeer.navigateByUrl('movielist'); })
-  }
-
-  searchMovie(filterText:any){
-    const a = filterText.target.value;
-    this.filtertext = a;
   }
 
   ascending(){
@@ -55,4 +42,28 @@ export class MovieListComponent implements OnInit{
     this.filteredMovies$ = this.movies$.pipe(map((movie) => movie.sort((a:Movie, b:Movie) => b.movieName.localeCompare(a.movieName))))
     this.movies$=this.filteredMovies$;
   }
+
+
+  // searchMovies(event:any){
+  //   const searchTerm = event.target.value.trim().toLowerCase();
+  //   if(!searchTerm)
+  //     {
+  //     this.filteredMovies$ = this.movies$;
+  //   }
+  //   else
+  //   {
+  //   this.filteredMovies$ = this.movies$.pipe(
+  //     map((movies) => 
+  //          movies.filter(
+  //         (movie) => movie.id.toString().includes(searchTerm) || movie.movieName.includes(searchTerm) )))
+  // }
+  // }
+
+    // Default Sorting
+  // getData(){
+  //   this.movies$ = this.ms.getMovies();
+  //   this.filteredMovies$ = this.movies$.pipe(map((d) => {
+  //     d.sort((a:Movie, b:Movie) => a.movieName.localeCompare(b.movieName))
+  //   }))
+  // }
 }
