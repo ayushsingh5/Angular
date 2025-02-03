@@ -30,10 +30,12 @@ export class StudentListComponent implements OnInit{
   }
 
   deleteStudent(id:any){
-    this.ss.deleteStudent(id).subscribe(() => {
+    this.ss.deleteStudent(id).subscribe(() => 
+      {
       alert("Deleted");
       this.router.navigateByUrl('list');
-    })
+    }
+  )
   }
 
 }

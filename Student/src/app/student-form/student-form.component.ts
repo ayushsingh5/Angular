@@ -20,7 +20,7 @@ export class StudentFormComponent implements OnInit{
     this.fg = this.fb.group({
       name:["", [Validators.required, Validators.minLength(8), Validators.maxLength(20)]],
       dateOfBirth:["",[Validators.required, this.dateValidator]],
-      percentage:["", [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/)]],
+      percentage:["", [Validators.required, Validators.pattern(/^\d+\.\d{1,2}$/)]],
       weight:[0, [Validators.required]]
     })
   }

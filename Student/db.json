@@ -1,25 +1,25 @@
 {
   "student": [
     {
-      "id": "c556",
-      "name": "Ayush Singh",
-      "dateOfBirth": "2002-05-04",
-      "percentage": "22.00",
-      "weight": "30"
-    },
-    {
-      "id": "4ec2",
       "name": "Chirayu Tr",
       "dateOfBirth": "2020-05-02",
       "percentage": "22.00",
-      "weight": "100"
+      "weight": "10",
+      "id": "4ec2"
     },
     {
-      "id": "bf9c",
-      "name": "BalaMurugan",
-      "dateOfBirth": "2020-12-23",
-      "percentage": "22",
-      "weight": "45"
+      "id": "e2b6",
+      "name": "Ayush Singh",
+      "dateOfBirth": "2002-05-04",
+      "percentage": "33",
+      "weight": "3"
+    },
+    {
+      "id": "47b4",
+      "name": "Ayush Singh",
+      "dateOfBirth": "2002-05-04",
+      "percentage": "7",
+      "weight": "07"
     }
   ]
 }

@@ -3,19 +3,19 @@
 
         <div>
             <label for="name">Name</label>
-            <input type="text" placeholder="Name" formControlName="name">
-            <div *ngIf="fg.get('name')?.invalid && (fg.get('name')?.touched || fg.get('name')?.touched)">
-                <small *ngIf="fg.get('name')?.hasError('required')">Mandatory Field</small>
-                <small *ngIf="fg.get('name')?.hasError('minLength')">Min Length should be 8</small>
-                <small *ngIf="fg.get('name')?.hasError('maxLength')">Max Length should be 20</small>
+            <input type="text" placeholder="Name" formControlName="name" required>
+            <div *ngIf="fg.get('name')?.invalid && (fg.get('name')?.touched || fg.get('name')?.dirty)">
+                <small>Mandatory Field</small>
+                <small *ngIf="fg.get('name')?.hasError('minlength')">Min Length should be 8</small>
+                <small *ngIf="fg.get('name')?.hasError('maxlength')">Max Length should be 20</small>
             </div>
         </div>
 
         <div>
             <label for="dateOfBirth">Date of Birth</label>
-            <input type="text" placeholder="Date of Birth" formControlName="dateOfBirth">
-            <div *ngIf="fg.get('dateOfBirth')?.invalid && (fg.get('dateOfBirth')?.touched || fg.get('dateOfBirth')?.touched)">
-                <small *ngIf="fg.get('dateOfBirth')?.hasError('required')">Mandatory Field</small>
+            <input type="text" placeholder="Date of Birth" formControlName="dateOfBirth" required>
+            <div *ngIf="fg.get('dateOfBirth')?.invalid && (fg.get('dateOfBirth')?.touched || fg.get('dateOfBirth')?.dirty)">
+                <small>Mandatory Field</small>
                 <small *ngIf="fg.get('dateOfBirth')?.hasError('inval')">YYYY-MM-DD</small>
             </div>
         </div>
@@ -23,7 +23,7 @@
         <div>
             <label for="percentage">Percentage</label>
             <input type="text" placeholder="Percentage" formControlName="percentage">
-            <div *ngIf="fg.get('percentage')?.invalid && (fg.get('percentage')?.touched || fg.get('percentage')?.touched)">
+            <div *ngIf="fg.get('percentage')?.invalid && (fg.get('percentage')?.touched || fg.get('percentage')?.dirty)">
                 <small *ngIf="fg.get('percentage')?.hasError('required')">Mandatory Field</small>
                 <small *ngIf="fg.get('percentage')?.hasError('pattern')">only two decimal place is allowed</small>
             </div>
@@ -32,7 +32,7 @@
         <div>
             <label for="weight">Weight</label>
             <input type="text" placeholder="Weight" formControlName="weight">
-            <div *ngIf="fg.get('weight')?.invalid && (fg.get('weight')?.touched || fg.get('weight')?.touched)">
+            <div *ngIf="fg.get('weight')?.invalid && (fg.get('weight')?.touched || fg.get('weight')?.dirty)">
                 <small *ngIf="fg.get('weight')?.hasError('required')">Mandatory Field</small>
             </div>
         </div>
