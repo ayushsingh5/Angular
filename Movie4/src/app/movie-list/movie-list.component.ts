@@ -55,7 +55,7 @@ export class MovieListComponent implements OnInit{
   //   this.filteredMovies$ = this.movies$.pipe(
   //     map((movies) => 
   //          movies.filter(
-  //         (movie) => movie.id.toString().includes(searchTerm) || movie.movieName.includes(searchTerm) )))
+  //         (movie:Movie) => movie.id.toString().includes(searchTerm) || movie.movieName.includes(searchTerm) )))
   // }
   // }
 

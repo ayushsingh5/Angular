@@ -29,6 +29,19 @@ export class StudentListComponent implements OnInit{
      this.students$=this.filteredStudents$;
   }
 
+  // searchStudent(event:any){
+  //   const st = event.target.value.trim().toLowerCase();
+
+  //   if(!st){
+  //     this.filteredStudents$ = this.students$;
+  //   }
+  //   this.filteredStudents$ = this.students$.pipe(map((students) => {
+  //     return students.filter((student:Student) => {
+  //       student.id.toString().includes(st) || student.name.toLowerCase().includes(st);
+  //     })
+  //   }))
+  // }
+
   deleteStudent(id:any){
     this.ss.deleteStudent(id).subscribe(() => 
       {
